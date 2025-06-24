@@ -1,0 +1,77 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.4);
+}
+
+#addArrivalForm {
+  max-width: 500px;
+  margin: auto;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.animate-typing {
+  display: inline-block;
+  animation: typing 2s steps(12) 1s 1 normal both, blink 0.7s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatUpDown 3s ease-in-out infinite;
+}

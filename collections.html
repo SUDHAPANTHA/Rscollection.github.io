@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rose Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="js/toogle.js" />
+  </head>
+  <body>
+    <nav
+      class="flex items-center justify-between px-6 py-6 bg-white shadow-md relative"
+    >
+      <h1 class="text-2xl font-bold text-gray-800">
+        Clo<span class="text-purple-600">th</span>y
+      </h1>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="arrivals.html">New Arrivals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Toggle Button -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sign In Button -->
+      <div class="hidden md:flex gap-3">
+        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg">
+          Sign In
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
+      <ul class="flex flex-col gap-4 text-gray-700 font-medium">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="arrivals.html">New Arrivals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button
+            class="bg-purple-600 text-white px-4 py-2 rounded-lg w-full text-left"
+          >
+            Sign In
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <section class="bg-purple-100 py-16 px-10">
+      <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Our <span class="text-purple-600">Collections</span>
+        </h2>
+        <p class="text-gray-600">
+          Explore our exclusive collections designed to elevate your style.
+        </p>
+      </div>
+
+      <!-- By Occasion -->
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">By Occasion</h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <!-- Card -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/cas.jpg"
+              alt="casual"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Casual Wear</h3>
+              <p class="text-gray-600">
+                Comfortable and stylish outfits for everyday wear.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/fornal.jpeg"
+              alt="formal"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Formal Wear</h3>
+              <p class="text-gray-600">
+                Dress with confidence and class for any formal event.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/partywear.jpeg"
+              alt="party"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Party Wear</h3>
+              <p class="text-gray-600">
+                Shine at every event with our glam party outfits.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/travel.jpg"
+              alt="travel"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Travel Wear</h3>
+              <p class="text-gray-600">
+                Move in comfort with fashion-forward travel looks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- By Gender -->
+      <div class="max-w-7xl mx-auto mt-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">By Gender</h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/mens.jpg"
+              alt="men"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Men's Wear</h3>
+              <p class="text-gray-600">
+                Classic styles and bold trends for the modern man.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/fornal.jpeg"
+              alt="women"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Women's Wear</h3>
+              <p class="text-gray-600">
+                Graceful, chic and empowering outfits for women.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/UNISEXFASHION7.jpg"
+              alt="unisex"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Unisex Wear</h3>
+              <p class="text-gray-600">
+                Versatile pieces that break gender boundaries.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/kid.jpg"
+              alt="kids"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Kid's Wear</h3>
+              <p class="text-gray-600">
+                Fun, playful and comfy clothes for little stars.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Section -->
+    <section id="footer" class="bg-purple-200 text-white py-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="text-sm text-black">
+          &copy; 2025 Clothy. All rights reserved.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>

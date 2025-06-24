@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rose Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="js/toogle.js" />
+  </head>
+  <body class="bg-[#f8eefe] font-sans">
+    <!-- navigation -->
+    <nav
+      class="flex items-center justify-between px-6 py-6 bg-white shadow-md relative"
+    >
+      <h1 class="text-2xl font-bold text-gray-800">
+        Clo<span class="text-purple-600">th</span>y
+      </h1>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="arrivals.html">New Arrivals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Toggle Button -->
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sign In Button -->
+      <div class="hidden md:flex gap-3">
+        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg">
+          <a href="signin.html"> Sign In</a>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
+      <ul class="flex flex-col gap-4 text-gray-700 font-medium">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="arrivals.html">New Arrivals</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <button
+            class="bg-purple-600 text-white px-4 py-2 rounded-lg w-full text-left"
+          >
+            Sign In
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!-- Hero Section -->
+    <section
+      class="flex flex-col lg:flex-row items-center justify-between px-6 md:px-16 py-20 bg-purple-50"
+    >
+      <!-- Left: Text -->
+      <div class="lg:w-1/2 space-y-6 text-center lg:text-left mb-10 lg:mb-0">
+        <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-800">
+          Stay Cool in Style with Summer Fashion<br />
+          <span
+            class="bg-gradient-to-r from-purple-600 via-pink-400 to-purple-600 bg-clip-text text-transparent animate-gradient"
+          >
+            unique way
+          </span>
+        </h2>
+        <p class="text-gray-700 text-md fade-up" style="animation-delay: 0.3s">
+          Rose Collection offers stylish, comfortable, and sustainable clothing
+          made to express your unique vibe and perfect for any occasion.
+        </p>
+        <div
+          class="flex justify-center lg:justify-start gap-4 fade-up"
+          style="animation-delay: 0.6s"
+        >
+          <button
+            class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold"
+          >
+            Shop Now
+          </button>
+          <button
+            class="bg-purple-100 text-black px-6 py-3 rounded-lg font-semibold"
+          >
+            Explore Collection
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Image -->
+      <div class="lg:w-1/2 flex justify-center">
+        <img
+          src="images/fash.png"
+          alt="Fashion Model"
+          class="bg-gradient-to-tr from-purple-400 to-pink-400 rounded-full p-2 sm:p-4 lg:p-8 shadow-lg max-w-full h-auto"
+        />
+      </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="bg-purple-100 py-16 px-10">
+      <div class="max-w-7xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Our <span class="text-purple-600">Collections</span>
+        </h2>
+        <p class="text-gray-600">
+          Explore our exclusive collections designed to elevate your style.
+        </p>
+      </div>
+
+      <!-- By Occasion -->
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">By Occasion</h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <!-- Card -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/cas.jpg"
+              alt="casual"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Casual Wear</h3>
+              <p class="text-gray-600">
+                Comfortable and stylish outfits for everyday wear.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/fornal.jpeg"
+              alt="formal"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Formal Wear</h3>
+              <p class="text-gray-600">
+                Dress with confidence and class for any formal event.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/partywear.jpeg"
+              alt="party"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Party Wear</h3>
+              <p class="text-gray-600">
+                Shine at every event with our glam party outfits.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/travel.jpg"
+              alt="travel"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Travel Wear</h3>
+              <p class="text-gray-600">
+                Move in comfort with fashion-forward travel looks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- By Gender -->
+      <div class="max-w-7xl mx-auto mt-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">By Gender</h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/mens.jpg"
+              alt="men"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Men's Wear</h3>
+              <p class="text-gray-600">
+                Classic styles and bold trends for the modern man.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/fornal.jpeg"
+              alt="women"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Women's Wear</h3>
+              <p class="text-gray-600">
+                Graceful, chic and empowering outfits for women.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/UNISEXFASHION7.jpg"
+              alt="unisex"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Unisex Wear</h3>
+              <p class="text-gray-600">
+                Versatile pieces that break gender boundaries.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+          >
+            <img
+              src="images/kid.jpg"
+              alt="kids"
+              class="w-full h-48 object-cover mb-4 rounded-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Kid's Wear</h3>
+              <p class="text-gray-600">
+                Fun, playful and comfy clothes for little stars.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- New Arrivals -->
+    <section id="newarrivals" class="bg-purple-10 py-20 px-6 md:px-20">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-gray-800 mb-6">
+          New <span class="text-purple-600">Arrivals</span>
+        </h2>
+        <p class="text-lg text-gray-600 mb-10">
+          Discover the latest trends and styles in our new arrivals.
+        </p>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+        >
+          <!-- Card 1 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/fornal.jpeg"
+              alt="New Arrival 1"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 1</h3>
+            <p class="text-gray-600">NPR 1000</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/cas.jpg"
+              alt="New Arrival 2"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 2</h3>
+            <p class="text-gray-600">NPR 2000</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/partywear.jpeg"
+              alt="New Arrival 3"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 3</h3>
+            <p class="text-gray-600">NPR 3000</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/travel.jpg"
+              alt="New Arrival 4"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 4</h3>
+            <p class="text-gray-600">NPR 4000</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/mens.jpg"
+              alt="New Arrival 5"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 5</h3>
+            <p class="text-gray-600">NPR 1000</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/UNISEXFASHION7.jpg"
+              alt="New Arrival 6"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 6</h3>
+            <p class="text-gray-600">NPR 2000</p>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/kid.jpg"
+              alt="New Arrival 7"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 7</h3>
+            <p class="text-gray-600">NPR 3000</p>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-md flex flex-col h-full transform transition duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2"
+          >
+            <img
+              src="images/casual.jpg"
+              alt="New Arrival 8"
+              class="w-full h-48 object-cover rounded mb-4"
+            />
+            <h3 class="text-lg font-semibold text-gray-800">New Arrival 8</h3>
+            <p class="text-gray-600">NPR 4000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Us Section -->
+    <section id="about" class="bg-purple-100 py-20 px-6 md:px-20">
+      <div
+        class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10"
+      >
+        <div class="lg:w-1/2 space-y-6">
+          <h2 class="text-4xl font-extrabold text-gray-800">
+            About <span class="text-purple-600">Us</span>
+          </h2>
+          <p class="text-lg text-gray-600">
+            At <strong>Clothy</strong>, we believe that fashion should be more
+            than just stylish it should be empowering, sustainable, and a true
+            expression of your individuality.
+          </p>
+          <p class="text-gray-600">
+            Our collections are carefully curated to bring you comfort,
+            elegance, and confidence in every outfit. Designed with love and
+            crafted with care, Clothy is where trend meets timelessness.
+          </p>
+          <button
+            class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+          >
+            Learn More
+          </button>
+        </div>
+        <!-- Image or Visual -->
+        <div class="lg:w-1/2 flex justify-center">
+          <div
+            class="bg-gradient-to-tr from-purple-400 to-pink-400 rounded-full p-2 sm:p-4 lg:p-8"
+          >
+            <img
+              src="images/casual.jpg"
+              alt="cas"
+              class="w-full rounded-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section id="footer" class="bg-purple-200 text-white py-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <p class="text-sm text-black">
+          &copy; 2025 Clothy. All rights reserved.
+        </p>
+      </div>
+    </section>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

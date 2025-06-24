@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-purple-50 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+      <a href="index.html">
+        <h1 class="text-3xl font-bold text-gray-800 text-center my-3">
+          Clo<span class="text-purple-600">th</span>y
+        </h1>
+      </a>
+      <h2 class="text-2xl font-bold text-center text-purple-700">
+        Create Account
+      </h2>
+      <p class="text-center text-gray-500 mb-6">
+        Join us today! It's quick and easy.
+      </p>
+
+      <form action="#" class="space-y-5">
+        <div>
+          <label class="block mb-1 text-sm font-medium text-gray-700"
+            >Full Name</label
+          >
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your full name"
+            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+            required
+          />
+        </div>
+        <div>
+          <label class="block mb-1 text-sm font-medium text-gray-700"
+            >Email</label
+          >
+          <input
+            id="email"
+            type="email"
+            placeholder="you@example.com"
+            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+            required
+          />
+        </div>
+        <div>
+          <label class="block mb-1 text-sm font-medium text-gray-700"
+            >Password</label
+          >
+          <input
+            id="password"
+            type="password"
+            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+            required
+          />
+        </div>
+        <div>
+          <label class="block mb-1 text-sm font-medium text-gray-700"
+            >Confirm Password</label
+          >
+          <input
+            id="confirmpassword"
+            type="password"
+            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500 outline-none"
+            required
+          />
+        </div>
+
+        <!--Error message display -->
+        <p id="error-msg" class="text-red-600 text-sm text-center"></p>
+        <button
+          type="submit"
+          id="submit"
+          class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+        >
+          Sign Up
+        </button>
+      </form>
+
+      <div class="mt-6 text-sm text-center text-gray-500">
+        Already have an account?
+        <a href="signin.html" class="text-purple-600 hover:underline"
+          >Sign In</a
+        >
+      </div>
+      <div class="my-6 border-t text-center text-gray-400 text-sm pt-4">
+        Or continue with
+      </div>
+
+      <!-- Google Login -->
+      <button
+        id="google-log"
+        class="w-full flex items-center justify-center gap-2 border py-2 rounded-lg mt-3 hover:bg-gray-100"
+      >
+        <img
+          src="images/google-removebg-preview.png"
+          class="w-5 h-5"
+          alt="Google logo"
+        />
+        Continue with Google
+      </button>
+    </div>
+    <script type="module" src="js/signup.js"></script>
+  </body>
+</html>
