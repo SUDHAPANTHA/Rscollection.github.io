@@ -29,8 +29,9 @@ form.addEventListener("submit", async (e) => {
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
+  const subject = document.getElementById("subject").value.trim();
 
-  if (!name || !email || !message) {
+  if (!name || !email || !subject || !message) {
     statusMsg.textContent = "Please fill out all fields.";
     statusMsg.style.color = "red";
     return;
@@ -41,6 +42,7 @@ form.addEventListener("submit", async (e) => {
       name,
       email,
       message,
+      subject,
       createdAt: serverTimestamp(),
     });
     statusMsg.textContent = "Your message has been sent successfully!";

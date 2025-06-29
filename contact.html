@@ -21,7 +21,9 @@
         <!-- Desktop Menu -->
         <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-700">
           <li>
-            <a href="#" class="text-pink-600 border-b-2 border-pink-500 pb-1"
+            <a
+              href="index.html"
+              class="text-pink-600 border-b-2 border-pink-500 pb-1"
               >Home</a
             >
           </li>
@@ -60,7 +62,9 @@
         id="mobile-menu"
         class="md:hidden hidden mt-4 space-y-4 text-gray-700 text-sm font-medium"
       >
-        <a href="#" class="block text-pink-600 border-b-2 border-pink-500 pb-1"
+        <a
+          href="index.html"
+          class="block text-pink-600 border-b-2 border-pink-500 pb-1"
           >Home</a
         >
         <a href="collections.html" class="block">Collections</a>
@@ -107,6 +111,7 @@
                     >Full Name *</label
                   >
                   <input
+                    id="name"
                     type="text"
                     required
                     placeholder="Your full name"
@@ -118,6 +123,7 @@
                     >Email Address *</label
                   >
                   <input
+                    id="email"
                     type="email"
                     required
                     placeholder="your@email.com"
@@ -131,6 +137,7 @@
                   >Subject *</label
                 >
                 <select
+                  id="subject"
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                 >
@@ -149,6 +156,7 @@
                   >Message</label
                 >
                 <textarea
+                  id="message"
                   rows="6"
                   required
                   placeholder="Tell us how we can help you..."

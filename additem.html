@@ -1,50 +1,51 @@
-<!-- add-item.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add New Arrival | Rose Collection</title>
+    <title>Add Item</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body
-    class="bg-purple-50 min-h-screen flex items-center justify-center px-4 py-10"
-  >
-    <div class="max-w-md w-full bg-white p-8 rounded-xl shadow-xl">
-      <h2 class="text-2xl font-bold text-purple-700 text-center mb-6">
-        Add New Arrival
-      </h2>
+  <body class="bg-gray-50 py-10">
+    <div class="max-w-xl mx-auto p-6 bg-white rounded shadow">
+      <h2 class="text-2xl font-bold mb-4">Add New Arrival</h2>
       <form id="addItemForm" class="space-y-4">
-        <input
-          type="text"
-          id="title"
-          placeholder="Product Title"
-          class="w-full border border-gray-300 rounded px-4 py-3"
-          required
-        />
-        <input
-          type="number"
-          id="price"
-          placeholder="Price (NPR)"
-          class="w-full border border-gray-300 rounded px-4 py-3"
-          required
-        />
-        <input
-          type="file"
-          id="image"
-          accept="image/*"
-          class="w-full border border-gray-300 rounded px-4 py-3"
-          required
-        />
+        <div>
+          <label class="block font-semibold mb-1">Title</label>
+          <input
+            type="text"
+            id="title"
+            required
+            class="w-full border border-gray-300 px-3 py-2 rounded"
+          />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Price (NPR)</label>
+          <input
+            type="number"
+            id="price"
+            required
+            class="w-full border border-gray-300 px-3 py-2 rounded"
+          />
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Image</label>
+          <input
+            type="file"
+            id="image"
+            accept="image/*"
+            required
+            class="w-full"
+          />
+        </div>
         <button
-          id="submitBtn"
           type="submit"
-          class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 font-semibold"
+          class="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 transition"
         >
-          Submit
+          Add Product
         </button>
       </form>
     </div>
+
     <script type="module" src="js/additem.js"></script>
   </body>
 </html>

@@ -1,76 +1,61 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("addItemForm");
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-storage.js";
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+const firebaseConfig = {
+  apiKey: "AIzaSyCAdevSP8dqZ6GZMFo5SU61hl51y4w9M20",
+  authDomain: "clothy1-7ef01.firebaseapp.com",
+  databaseURL: "https://clothy1-7ef01-default-rtdb.firebaseio.com",
+  projectId: "clothy1-7ef01",
+  storageBucket: "clothy1-7ef01.firebasestorage.app",
+  messagingSenderId: "705095173001",
+  appId: "1:705095173001:web:f8ef4798a3645e5dc19758",
+};
 
-    const title = document.getElementById("title").value;
-    const price = document.getElementById("price").value;
-    const imageInput = document.getElementById("image");
-    const imageFile = imageInput.files[0];
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-    if (!title || !price || !imageFile) {
-      alert("Please fill in all fields.");
-      return;
-    }
+document.getElementById("addItemForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const reader = new FileReader();
-    reader.onload = function () {
-      const imageDataUrl = reader.result;
+  const title = document.getElementById("title").value.trim();
+  const price = document.getElementById("price").value.trim();
+  const imageFile = document.getElementById("image").files[0];
 
-      const product = {
-        title,
-        price,
-        image: imageDataUrl,
-      };
+  if (!title || !price || !imageFile) {
+    alert("Please fill in all fields.");
+    return;
+  }
 
-      const existingItems = JSON.parse(localStorage.getItem("products")) || [];
-      existingItems.push(product);
-      localStorage.setItem("products", JSON.stringify(existingItems));
+  try {
+    // Upload image to Firebase Storage
+    const storageRef = ref(storage, `products/${Date.now()}-${imageFile.name}`);
+    await uploadBytes(storageRef, imageFile);
+    const imageUrl = await getDownloadURL(storageRef);
 
-      alert("Product added successfully!");
-      form.reset();
-    };
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("addItemForm");
-
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const title = document.getElementById("title").value;
-        const price = document.getElementById("price").value;
-        const imageInput = document.getElementById("image");
-        const imageFile = imageInput.files[0];
-
-        if (!title || !price || !imageFile) {
-          alert("Please fill in all fields.");
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = async function () {
-          const imageDataUrl = reader.result;
-
-          const product = {
-            title,
-            price,
-            image: imageDataUrl,
-            createdAt: new Date(),
-          };
-
-          try {
-            await addDoc(collection(window.db, "products"), product);
-            alert("Product added to Firestore!");
-            form.reset();
-          } catch (err) {
-            console.error("Error adding to Firestore:", err);
-            alert("Failed to save to Firestore.");
-          }
-        };
-
-        reader.readAsDataURL(imageFile);
-      });
+    // Save product data to Firestore
+    await addDoc(collection(db, "products"), {
+      title,
+      price,
+      image: imageUrl,
+      createdAt: serverTimestamp(),
     });
-    reader.readAsDataURL(imageFile);
-  });
+
+    alert("Product added successfully!");
+    document.getElementById("addItemForm").reset();
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Failed to add product: " + error.message);
+  }
 });
