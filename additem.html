@@ -7,15 +7,17 @@
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
 
-  <body class="bg-gray-50 py-10">
+  <body class="bg-gray-50">
     <nav class="bg-white shadow-md px-4 sm:px-6 py-4">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <!-- Logo -->
-        <h1
-          class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text"
-        >
-          CLOTHY
-        </h1>
+        <a href="dashboard.html">
+          <h1
+            class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text"
+          >
+            CLOTHY
+          </h1>
+        </a>
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-700">
@@ -30,7 +32,6 @@
           <li><a href="arrivals.html">New Arrivals</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="signin.html">Sign In</a></li>
         </ul>
 
         <!-- Icons -->
@@ -84,7 +85,7 @@
         </div>
       </div>
     </nav>
-    <div class="max-w-xl mx-auto p-6 bg-white rounded shadow">
+    <div class="max-w-xl mx-auto p-6 bg-white rounded shadow my-20">
       <h2 class="text-2xl font-bold mb-4">Add New Arrival</h2>
       <form id="addItemForm" class="space-y-4">
         <div>
@@ -125,5 +126,6 @@
     </div>
 
     <script type="module" src="js/additem.js"></script>
+    <script src="js/lucid.js"></script>
   </body>
 </html>

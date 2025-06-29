@@ -20,10 +20,13 @@ function renderCart() {
   let total = 0;
 
   cart.forEach((item, index) => {
-    total += item.price * item.quantity;
+    let priceNum = Number(item.price);
+    if (isNaN(priceNum)) priceNum = 0;
+
+    total += priceNum * item.quantity;
 
     const itemDiv = document.createElement("div");
-    itemDiv.className = "flex items-center gap-4";
+    itemDiv.className = "flex items-center gap-4 mb-4 border-b pb-3";
 
     itemDiv.innerHTML = `
       <img src="${item.image}" alt="${
@@ -31,8 +34,8 @@ function renderCart() {
     }" class="w-16 h-16 object-cover rounded" />
       <div class="flex-grow">
         <h3 class="font-semibold text-gray-900">${item.name}</h3>
-        <p>Price: $${item.price.toFixed(2)}</p>
-        <p>Quantity: ${item.quantity}</p>
+        <p class="text-sm text-gray-600">Price: $${priceNum.toFixed(2)}</p>
+        <p class="text-sm text-gray-600">Quantity: ${item.quantity}</p>
       </div>
       <button data-index="${index}" class="remove-btn px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition">Remove</button>
     `;
@@ -42,6 +45,7 @@ function renderCart() {
 
   cartTotal.textContent = `Total: $${total.toFixed(2)}`;
 
+  // Attach remove button handlers
   document.querySelectorAll(".remove-btn").forEach((button) => {
     button.addEventListener("click", (e) => {
       const idx = e.target.getAttribute("data-index");
@@ -65,29 +69,36 @@ function addToCart(product) {
   alert(`${product.name} added to cart!`);
 }
 
-document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest("div.bg-white");
-    if (!card) return;
+// Attach add to cart button listeners on DOM content loaded
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const card = button.closest("div.bg-white");
+      if (!card) return;
 
-    const name = card.querySelector("h3").textContent.trim();
+      const name = card.querySelector("h3").textContent.trim();
 
-    let priceElem = card.querySelector(".text-2xl, .text-xl");
-    let priceText = priceElem ? priceElem.textContent : "$0";
-    const price = parseFloat(priceText.replace("$", ""));
+      const priceElem = card.querySelector(".text-2xl, .text-xl");
+      const priceText = priceElem ? priceElem.textContent : "$0";
+      const price = parseFloat(priceText.replace("$", "").trim());
 
-    const image = card.querySelector("img").getAttribute("src");
+      const image = card.querySelector("img").getAttribute("src");
 
-    addToCart({ name, price, image });
+      addToCart({ name, price, image });
+    });
   });
-});
 
-document.getElementById("clear-cart-btn").addEventListener("click", () => {
-  if (confirm("Are you sure you want to clear the cart?")) {
-    cart = [];
-    saveCart();
-    renderCart();
+  // Clear cart button
+  const clearCartBtn = document.getElementById("clear-cart-btn");
+  if (clearCartBtn) {
+    clearCartBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to clear the cart?")) {
+        cart = [];
+        saveCart();
+        renderCart();
+      }
+    });
   }
-});
 
-renderCart();
+  renderCart();
+});

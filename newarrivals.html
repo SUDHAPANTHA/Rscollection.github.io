@@ -6,15 +6,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body class="bg-purple-100 py-10">
+  <body class="bg-purple-100">
     <nav class="bg-white shadow-md px-4 sm:px-6 py-4">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <!-- Logo -->
-        <h1
-          class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text"
+        <a href="index.html">
+          <h1
+            class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text"
+          >
+            CLOTHY
+          </h1></a
         >
-          CLOTHY
-        </h1>
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-700">
@@ -29,7 +31,6 @@
           <li><a href="arrivals.html">New Arrivals</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="signin.html">Sign In</a></li>
         </ul>
 
         <!-- Icons -->
@@ -83,7 +84,7 @@
         </div>
       </div>
     </nav>
-    <section id="newarrivals" class="max-w-7xl mx-auto px-4">
+    <section id="newarrivals" class="max-w-7xl mx-auto px-4 my-6">
       <h2 class="text-4xl font-bold text-center text-gray-800 mb-6">
         New Arrivals
       </h2>
@@ -92,6 +93,15 @@
         id="productGrid"
       ></div>
     </section>
+    <!-- Cart Summary Section -->
+    <section id="cartSummary" class="max-w-7xl mx-auto px-4 mt-16 hidden">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Items in Cart</h2>
+      <ul
+        id="cartItems"
+        class="space-y-4 bg-white rounded-lg p-6 shadow-md"
+      ></ul>
+    </section>
+
     <script src="js/lucid.js"></script>
     <script type="module" src="js/showproduct.js"></script>
   </body>
