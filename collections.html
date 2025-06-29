@@ -6,229 +6,577 @@
     <title>Rose Collection</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="js/toogle.js" />
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body>
-    <nav
-      class="flex items-center justify-between px-6 py-6 bg-white shadow-md relative"
-    >
-      <h1 class="text-2xl font-bold text-gray-800">
-        Clo<span class="text-purple-600">th</span>y
-      </h1>
-
-      <!-- Desktop Menu -->
-      <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="collections.html">Collections</a></li>
-        <li><a href="arrivals.html">New Arrivals</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <!-- Toggle Button -->
-      <div class="md:hidden">
-        <button id="menu-toggle" class="text-gray-800 focus:outline-none">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Sign In Button -->
-      <div class="hidden md:flex gap-3">
-        <button class="bg-purple-600 text-white px-4 py-2 rounded-lg">
-          Sign In
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white">
-      <ul class="flex flex-col gap-4 text-gray-700 font-medium">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="collections.html">Collections</a></li>
-        <li><a href="arrivals.html">New Arrivals</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li>
-          <button
-            class="bg-purple-600 text-white px-4 py-2 rounded-lg w-full text-left"
-          >
-            Sign In
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    <section class="bg-purple-100 py-16 px-10">
-      <div class="max-w-7xl mx-auto text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Our <span class="text-purple-600">Collections</span>
-        </h2>
-        <p class="text-gray-600">
-          Explore our exclusive collections designed to elevate your style.
-        </p>
-      </div>
-
-      <!-- By Occasion -->
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">By Occasion</h2>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+    <nav class="bg-white shadow-md px-4 sm:px-6 py-4">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <h1
+          class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 text-transparent bg-clip-text"
         >
-          <!-- Card -->
-          <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
-          >
-            <img
-              src="images/cas.jpg"
-              alt="casual"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Casual Wear</h3>
-              <p class="text-gray-600">
-                Comfortable and stylish outfits for everyday wear.
-              </p>
-            </div>
-          </div>
+          CLOTHY
+        </h1>
 
-          <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
-          >
-            <img
-              src="images/fornal.jpeg"
-              alt="formal"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Formal Wear</h3>
-              <p class="text-gray-600">
-                Dress with confidence and class for any formal event.
-              </p>
-            </div>
-          </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-700">
+          <li>
+            <a
+              href="index.html"
+              class="text-pink-600 border-b-2 border-pink-500 pb-1"
+              >Home</a
+            >
+          </li>
+          <li><a href="collections.html">Collections</a></li>
+          <li><a href="arrivals.html">New Arrivals</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signin.html">Sign In</a></li>
+        </ul>
 
-          <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
-          >
-            <img
-              src="images/partywear.jpeg"
-              alt="party"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Party Wear</h3>
-              <p class="text-gray-600">
-                Shine at every event with our glam party outfits.
-              </p>
-            </div>
+        <!-- Icons -->
+        <div class="hidden md:flex items-center gap-6 text-gray-700">
+          <i data-lucide="search" class="w-5 h-5"></i>
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <div class="relative">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span
+              class="absolute -top-2 -right-2 text-xs bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full"
+            >
+              0
+            </span>
           </div>
+        </div>
 
-          <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
-          >
-            <img
-              src="images/travel.jpg"
-              alt="travel"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Travel Wear</h3>
-              <p class="text-gray-600">
-                Move in comfort with fashion-forward travel looks.
-              </p>
-            </div>
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-gray-700 focus:outline-none"
+        >
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden mt-4 space-y-4 text-gray-700 text-sm font-medium"
+      >
+        <a
+          href="index.html"
+          class="block text-pink-600 border-b-2 border-pink-500 pb-1"
+          >Home</a
+        >
+        <a href="collections.html" class="block">Collections</a>
+        <a href="arrivals.html" class="block">New Arrivals</a>
+        <a href="about.html" class="block">About</a>
+        <a href="contact.html" class="block">Contact</a>
+        <div class="flex gap-6 pt-2">
+          <i data-lucide="search" class="w-5 h-5"></i>
+          <i data-lucide="user" class="w-5 h-5"></i>
+          <div class="relative">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span
+              class="absolute -top-2 -right-2 text-xs bg-red-500 text-white w-5 h-5 flex items-center justify-center rounded-full"
+            >
+              0
+            </span>
           </div>
         </div>
       </div>
+    </nav>
+    <!-- collections -->
+    <section class="min-h-screen bg-gray-50 py-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">Our Collections</h1>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Discover our curated selection of premium fashion pieces
+          </p>
+        </div>
 
-      <!-- By Gender -->
-      <div class="max-w-7xl mx-auto mt-16">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">By Gender</h2>
+        <!-- Filters -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <div
+            class="flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+          >
+            <!-- Categories -->
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-rose-500 to-purple-600 text-white"
+              >
+                All
+              </button>
+              <button
+                class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200"
+              >
+                Dresses
+              </button>
+              <button
+                class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200"
+              >
+                Tops
+              </button>
+              <button
+                class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200"
+              >
+                Bottoms
+              </button>
+              <button
+                class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200"
+              >
+                Outerwear
+              </button>
+              <button
+                class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200"
+              >
+                Accessories
+              </button>
+            </div>
+
+            <!-- Sorting + View -->
+            <div class="flex items-center gap-4">
+              <div class="relative">
+                <select
+                  class="appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-rose-500"
+                >
+                  <option>Featured</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Highest Rated</option>
+                </select>
+                <svg
+                  class="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </div>
+
+              <div
+                class="flex border border-gray-300 rounded-lg overflow-hidden"
+              >
+                <button class="p-2 bg-rose-500 text-white">
+                  <svg
+                    class="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M3 3h18M3 12h18M3 21h18" />
+                  </svg>
+                </button>
+                <button class="p-2 bg-white text-gray-400">
+                  <svg
+                    class="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
+          <!-- Product Card -->
           <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+            class="bg-white rounded-lg shadow-sm hover:shadow-lg transition group overflow-hidden"
           >
-            <img
-              src="images/mens.jpg"
-              alt="men"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Men's Wear</h3>
-              <p class="text-gray-600">
-                Classic styles and bold trends for the modern man.
-              </p>
+            <div class="relative">
+              <img
+                src="images/casual.jpg"
+                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all flex items-center justify-center"
+              >
+                <button
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Quick View
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3
+                class="font-semibold text-gray-900 group-hover:text-rose-500 mb-2"
+              >
+                Elegant Summer Dress
+              </h3>
+              <div class="flex gap-1 mb-2">
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #ff6b6b"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #4ecdc4"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #45b7d1"
+                ></div>
+              </div>
+              <div class="flex items-center text-yellow-400 mb-2"></div>
+              <div class="flex justify-between items-center">
+                <span class="text-xl font-bold text-rose-500">$89</span>
+                <button
+                  class="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-rose-600 hover:to-purple-700 transition transform hover:scale-105"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
 
+          <!-- Repeat more product cards... (copy/paste above and change details) -->
           <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+            class="bg-white rounded-lg shadow-sm hover:shadow-lg transition group overflow-hidden"
           >
-            <img
-              src="images/fornal.jpeg"
-              alt="women"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Women's Wear</h3>
-              <p class="text-gray-600">
-                Graceful, chic and empowering outfits for women.
-              </p>
+            <div class="relative">
+              <img
+                src="images/fornal.jpeg"
+                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all flex items-center justify-center"
+              >
+                <button
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Quick View
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3
+                class="font-semibold text-gray-900 group-hover:text-rose-500 mb-2"
+              >
+                Elegant Summer Dress
+              </h3>
+              <div class="flex gap-1 mb-2">
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #ff6b6b"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #4ecdc4"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #45b7d1"
+                ></div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-xl font-bold text-rose-500">$89</span>
+                <button
+                  class="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-rose-600 hover:to-purple-700 transition transform hover:scale-105"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
-
           <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+            class="bg-white rounded-lg shadow-sm hover:shadow-lg transition group overflow-hidden"
           >
-            <img
-              src="images/UNISEXFASHION7.jpg"
-              alt="unisex"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Unisex Wear</h3>
-              <p class="text-gray-600">
-                Versatile pieces that break gender boundaries.
-              </p>
+            <div class="relative">
+              <img
+                src="images/partywear.jpeg"
+                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all flex items-center justify-center"
+              >
+                <button
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Quick View
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3
+                class="font-semibold text-gray-900 group-hover:text-rose-500 mb-2"
+              >
+                Elegant Summer Dress
+              </h3>
+              <div class="flex gap-1 mb-2">
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #ff6b6b"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #4ecdc4"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #45b7d1"
+                ></div>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <span class="text-xl font-bold text-rose-500">$89</span>
+                <button
+                  class="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-rose-600 hover:to-purple-700 transition transform hover:scale-105"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
-
           <div
-            class="bg-white p-6 rounded-lg shadow-md h-full flex flex-col justify-between"
+            class="bg-white rounded-lg shadow-sm hover:shadow-lg transition group overflow-hidden"
           >
-            <img
-              src="images/kid.jpg"
-              alt="kids"
-              class="w-full h-48 object-cover mb-4 rounded-md"
-            />
-            <div>
-              <h3 class="text-lg font-semibold text-gray-800">Kid's Wear</h3>
-              <p class="text-gray-600">
-                Fun, playful and comfy clothes for little stars.
-              </p>
+            <div class="relative">
+              <img
+                src="images/cas.jpg"
+                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all flex items-center justify-center"
+              >
+                <button
+                  class="bg-white text-gray-900 px-4 py-2 rounded-full font-semibold opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300"
+                >
+                  Quick View
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3
+                class="font-semibold text-gray-900 group-hover:text-rose-500 mb-2"
+              >
+                Elegant Summer Dress
+              </h3>
+              <div class="flex gap-1 mb-2">
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #ff6b6b"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #4ecdc4"
+                ></div>
+                <div
+                  class="w-4 h-4 rounded-full border border-gray-300"
+                  style="background-color: #45b7d1"
+                ></div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-xl font-bold text-rose-500">$89</span>
+                <button
+                  class="bg-gradient-to-r from-rose-500 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-rose-600 hover:to-purple-700 transition transform hover:scale-105"
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- Footer Section -->
-    <section id="footer" class="bg-purple-200 text-white py-6">
-      <div class="max-w-7xl mx-auto text-center">
-        <p class="text-sm text-black">
-          &copy; 2025 Clothy. All rights reserved.
-        </p>
+    <footer class="bg-gray-900 text-white">
+      <!-- Main Footer -->
+      <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Brand Section -->
+          <div class="lg:col-span-2">
+            <a
+              href="/"
+              class="text-3xl font-bold bg-gradient-to-r from-rose-400 to-purple-400 bg-clip-text text-transparent mb-4 block"
+            >
+              Clothy
+            </a>
+            <p class="text-gray-300 mb-6 leading-relaxed">
+              Redefining fashion with sustainable, elegant pieces that celebrate
+              individuality and conscious living. Join our community of
+              style-conscious individuals.
+            </p>
+
+            <!-- Contact Info -->
+            <div class="space-y-3 text-sm">
+              <div class="flex items-center">
+                <span class="text-gray-300">hello@clothy.com</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-gray-300">+977-9847123456</span>
+              </div>
+              <div class="flex items-center">
+                <span class="text-gray-300">New Baneswor, Kathmandu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shop Links -->
+          <div>
+            <h3 class="font-semibold text-white mb-4">Shop</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >New Arrivals</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Best Sellers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Sale</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Gift Cards</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support Links -->
+          <div>
+            <h3 class="font-semibold text-white mb-4">Support</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Shipping & Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Size Guide</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company Links -->
+          <div>
+            <h3 class="font-semibold text-white mb-4">Company</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Sustainability</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-rose-400 transition-colors"
+                  >Press</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="border-t border-gray-800 mt-12 pt-12">
+          <div class="max-w-md mx-auto text-center">
+            <h3 class="text-xl font-semibold mb-4">Stay Updated</h3>
+            <p class="text-gray-300 mb-6">
+              Subscribe for exclusive offers, style tips, and early access to
+              new collections
+            </p>
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+              />
+              <button
+                class="bg-gradient-to-r from-rose-500 to-purple-600 px-6 py-3 rounded-lg font-semibold hover:from-rose-600 hover:to-purple-700 transition-all duration-300"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <!-- Bottom Bar -->
+      <div class="bg-gray-950 py-4">
+        <div
+          class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"
+        >
+          <div class="flex items-center space-x-4 mb-2 md:mb-0">
+            <a href="#" class="hover:text-rose-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-rose-400 transition-colors"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-rose-400 transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+          <div class="flex items-center">
+            <span>Made with</span>
+            <span>by the Clothy team</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/lucid.js"></script>
   </body>
 </html>
