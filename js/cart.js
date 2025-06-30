@@ -30,10 +30,10 @@ function renderCart() {
 
     itemDiv.innerHTML = `
       <img src="${item.image}" alt="${
-      item.name
+      item.title
     }" class="w-16 h-16 object-cover rounded" />
       <div class="flex-grow">
-        <h3 class="font-semibold text-gray-900">${item.name}</h3>
+        <h3 class="font-semibold text-gray-900">${item.title}</h3>
         <p class="text-sm text-gray-600">Price: $${priceNum.toFixed(2)}</p>
         <p class="text-sm text-gray-600">Quantity: ${item.quantity}</p>
       </div>
@@ -57,7 +57,7 @@ function renderCart() {
 }
 
 function addToCart(product) {
-  const index = cart.findIndex((item) => item.name === product.name);
+  const index = cart.findIndex((item) => item.title === product.title);
   if (index !== -1) {
     cart[index].quantity += 1;
   } else {
@@ -66,7 +66,7 @@ function addToCart(product) {
   }
   saveCart();
   renderCart();
-  alert(`${product.name} added to cart!`);
+  alert(`${product.title} added to cart!`);
 }
 
 // Attach add to cart button listeners on DOM content loaded
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = button.closest("div.bg-white");
       if (!card) return;
 
-      const name = card.querySelector("h3").textContent.trim();
+      const title = card.querySelector("h3").textContent.trim();
 
       const priceElem = card.querySelector(".text-2xl, .text-xl");
       const priceText = priceElem ? priceElem.textContent : "$0";
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const image = card.querySelector("img").getAttribute("src");
 
-      addToCart({ name, price, image });
+      addToCart({ title, price, image });
     });
   });
 
